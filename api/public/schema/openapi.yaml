@@ -1,11 +1,11 @@
 openapi: 3.0.2
 info:
-  title: 'Proto Component'
+  title: 'Test Component'
   version: V.0.1
   description: |
     API Details
-    - Component: Proto Component
-    - Reference: pc
+    - Component: Test Component
+    - Reference: tc
     - Enviroment: dev
     - Version: V.0.1
     - Repository: []() / [zip](/archive/master.zip)
@@ -18,69 +18,57 @@ info:
     Let er bij het meegeven van JWT tokens op dat deze moet worden voorafgegaan door een Bearer en een spatie, onder de header Authorization. De volledig naam wordt daarmee: 'Authorization: Bearer [TOKEN]'.
     
 paths:
-  /example_entities:
+  /honds:
     get:
       tags:
-        - ExampleEntity
-      operationId: getExampleEntityCollection
-      summary: 'Retrieves the collection of ExampleEntity resources.'
+        - Hond
+      operationId: getHondCollection
+      summary: 'Retrieves the collection of Hond resources.'
       responses:
         200:
-          description: 'ExampleEntity collection response'
+          description: 'Hond collection response'
           content:
             application/hal+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ExampleEntity'
+                  $ref: '#/components/schemas/Hond'
       parameters:
-        -
-          name: like_name
-          in: query
-          required: false
-          schema:
-            type: string
-        -
-          name: like_description
-          in: query
-          required: false
-          schema:
-            type: string
         -
           name: page
           in: query
@@ -119,43 +107,43 @@ paths:
           in: header
     post:
       tags:
-        - ExampleEntity
-      operationId: postExampleEntityCollection
-      summary: 'Creates a ExampleEntity resource.'
+        - Hond
+      operationId: postHondCollection
+      summary: 'Creates a Hond resource.'
       responses:
         201:
-          description: 'ExampleEntity resource created'
+          description: 'Hond resource created'
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/html:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
           links:
-            GetExampleEntityItem:
+            GetHondItem:
               parameters:
                 id: '$response.body#/id'
-              operationId: getExampleEntityItem
-              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /example_entities/{id}`.'
+              operationId: getHondItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /honds/{id}`.'
         400:
           description: 'Invalid input'
         404:
@@ -164,29 +152,29 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/html:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
-        description: 'The new ExampleEntity resource'
+              $ref: '#/components/schemas/Hond'
+        description: 'The new Hond resource'
       parameters:
         -
           name: Authorization
@@ -217,12 +205,12 @@ paths:
           name: X-Audit-Clarification
           description: 'A clarification as to why a request has been made  (doelbinding)'
           in: header
-  '/example_entities/{id}':
+  '/honds/{id}':
     get:
       tags:
-        - ExampleEntity
-      operationId: getExampleEntityItem
-      summary: 'Retrieves a ExampleEntity resource.'
+        - Hond
+      operationId: getHondItem
+      summary: 'Retrieves a Hond resource.'
       parameters:
         -
           name: id
@@ -261,42 +249,42 @@ paths:
           in: header
       responses:
         200:
-          description: 'ExampleEntity resource response'
+          description: 'Hond resource response'
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/html:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
         404:
           description: 'Resource not found'
     delete:
       tags:
-        - ExampleEntity
-      operationId: deleteExampleEntityItem
-      summary: 'Removes the ExampleEntity resource.'
+        - Hond
+      operationId: deleteHondItem
+      summary: 'Removes the Hond resource.'
       responses:
         204:
-          description: 'ExampleEntity resource deleted'
+          description: 'Hond resource deleted'
         404:
           description: 'Resource not found'
       parameters:
@@ -337,9 +325,9 @@ paths:
           in: header
     put:
       tags:
-        - ExampleEntity
-      operationId: putExampleEntityItem
-      summary: 'Replaces the ExampleEntity resource.'
+        - Hond
+      operationId: putHondItem
+      summary: 'Replaces the Hond resource.'
       parameters:
         -
           name: id
@@ -378,32 +366,32 @@ paths:
           in: header
       responses:
         200:
-          description: 'ExampleEntity resource updated'
+          description: 'Hond resource updated'
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/html:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
         400:
           description: 'Invalid input'
         404:
@@ -412,34 +400,34 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/html:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
-        description: 'The updated ExampleEntity resource'
+              $ref: '#/components/schemas/Hond'
+        description: 'The updated Hond resource'
     patch:
       tags:
-        - ExampleEntity
-      operationId: patchExampleEntityItem
-      summary: 'Updates the ExampleEntity resource.'
+        - Hond
+      operationId: patchHondItem
+      summary: 'Updates the Hond resource.'
       parameters:
         -
           name: id
@@ -478,32 +466,32 @@ paths:
           in: header
       responses:
         200:
-          description: 'ExampleEntity resource updated'
+          description: 'Hond resource updated'
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/json:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
             text/html:
               schema:
-                $ref: '#/components/schemas/ExampleEntity'
+                $ref: '#/components/schemas/Hond'
         400:
           description: 'Invalid input'
         404:
@@ -512,42 +500,562 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/json:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
+              $ref: '#/components/schemas/Hond'
           text/html:
             schema:
-              $ref: '#/components/schemas/ExampleEntity'
-        description: 'The updated ExampleEntity resource'
+              $ref: '#/components/schemas/Hond'
+        description: 'The updated Hond resource'
+  /ras:
+    get:
+      tags:
+        - Ras
+      operationId: getRasCollection
+      summary: 'Retrieves the collection of Ras resources.'
+      responses:
+        200:
+          description: 'Ras collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ras'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    post:
+      tags:
+        - Ras
+      operationId: postRasCollection
+      summary: 'Creates a Ras resource.'
+      responses:
+        201:
+          description: 'Ras resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Ras'
+          links:
+            GetRasItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getRasItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /ras/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Ras'
+        description: 'The new Ras resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/ras/{id}':
+    get:
+      tags:
+        - Ras
+      operationId: getRasItem
+      summary: 'Retrieves a Ras resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Ras resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Ras'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Ras
+      operationId: deleteRasItem
+      summary: 'Removes the Ras resource.'
+      responses:
+        204:
+          description: 'Ras resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - Ras
+      operationId: putRasItem
+      summary: 'Replaces the Ras resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Ras resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Ras'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Ras'
+        description: 'The updated Ras resource'
+    patch:
+      tags:
+        - Ras
+      operationId: patchRasItem
+      summary: 'Updates the Ras resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Ras resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Ras'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Ras'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Ras'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Ras'
+        description: 'The updated Ras resource'
 components:
   schemas:
-    ExampleEntity:
+    Hond:
       type: object
       description: ''
       properties:
         id:
           readOnly: true
           type: integer
-        name:
+        naam:
           type: string
-        description:
+        ras:
           type: string
+    Ras:
+      type: object
+      description: ''
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        naam:
+          type: string
+        beschrijving:
+          type: string
+        honden:
+          type: array
+          items:
+            type: string
 host: irc.zaakonline.nl
 servers:
   -
