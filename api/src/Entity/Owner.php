@@ -291,7 +291,7 @@ class Owner
 
         return $this;
     }
-    public function getBirthdate()
+    public function getBirthdate():\DateTimeInterface
     {
         return $this->birthdate;
     }
