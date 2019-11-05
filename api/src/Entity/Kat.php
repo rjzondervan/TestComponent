@@ -8,15 +8,14 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
-
 /**
  * @ApiResource(
  *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
  *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
  * )
- * @ORM\Entity(repositoryClass="App\Repository\HondRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\KatRepository")
  */
-class Hond
+class Kat
 {
     /**
      * @var \Ramsey\Uuid\UuidInterface
@@ -38,7 +37,6 @@ class Hond
      * @ORM\Column(type="uuid", unique=true)
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
-     * @Assert\Uuid
      */
     private $id;
 
@@ -56,7 +54,7 @@ class Hond
     private $naam;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="honden",cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="katten", cascade="persist")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)
@@ -64,7 +62,7 @@ class Hond
     private $ras;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="honden")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="katten")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)

@@ -14,9 +14,9 @@ use Symfony\Component\Serializer\Annotation\MaxDepth;
  *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
  *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
  * )
- * @ORM\Entity(repositoryClass="App\Repository\HondRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\KonijnRepository")
  */
-class Hond
+class Konijn
 {
     /**
      * @var \Ramsey\Uuid\UuidInterface
@@ -38,13 +38,11 @@ class Hond
      * @ORM\Column(type="uuid", unique=true)
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
-     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"read","write"})
      * @Assert\NotBlank
      * @Assert\Length(
      *     min=3,
@@ -52,11 +50,12 @@ class Hond
      *     minMessage = "The name must be at least {{ limit }} characters long",
      *     maxMessage = "The name cannot be longer than {{ limit }} characters"
      * )
+     * @Groups({"read","write"})
      */
     private $naam;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="honden",cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="konijnen", cascade="persist")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)
@@ -64,7 +63,7 @@ class Hond
     private $ras;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="honden")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="konijnen")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)

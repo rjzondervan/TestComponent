@@ -8,11 +8,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiProperty;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}},
- *     denormalizationContext={"groups"={"write"}}
+ *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
+ *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\RasRepository")
  */
@@ -55,12 +56,32 @@ class Ras
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Hond", mappedBy="ras", orphanRemoval=true)
+     *  @Groups({"read"})
+     * @MaxDepth(1)
      */
     private $honden;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Kat", mappedBy="ras", orphanRemoval=true)
+     */
+    private $katten;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Eend", mappedBy="ras", orphanRemoval=true)
+     */
+    private $eenden;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Konijn", mappedBy="ras", orphanRemoval=true)
+     */
+    private $konijnen;
 
     public function __construct()
     {
         $this->honden = new ArrayCollection();
+        $this->katten = new ArrayCollection();
+        $this->eenden = new ArrayCollection();
+        $this->konijnen = new ArrayCollection();
     }
 
     public function getId()
@@ -117,6 +138,99 @@ class Ras
             // set the owning side to null (unless already changed)
             if ($honden->getRas() === $this) {
                 $honden->setRas(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Kat[]
+     */
+    public function getKatten(): Collection
+    {
+        return $this->katten;
+    }
+
+    public function addKatten(Kat $katten): self
+    {
+        if (!$this->katten->contains($katten)) {
+            $this->katten[] = $katten;
+            $katten->setRas($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKatten(Kat $katten): self
+    {
+        if ($this->katten->contains($katten)) {
+            $this->katten->removeElement($katten);
+            // set the owning side to null (unless already changed)
+            if ($katten->getRas() === $this) {
+                $katten->setRas(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Eend[]
+     */
+    public function getEenden(): Collection
+    {
+        return $this->eenden;
+    }
+
+    public function addEenden(Eend $eenden): self
+    {
+        if (!$this->eenden->contains($eenden)) {
+            $this->eenden[] = $eenden;
+            $eenden->setRas($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEenden(Eend $eenden): self
+    {
+        if ($this->eenden->contains($eenden)) {
+            $this->eenden->removeElement($eenden);
+            // set the owning side to null (unless already changed)
+            if ($eenden->getRas() === $this) {
+                $eenden->setRas(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Konijn[]
+     */
+    public function getKonijnen(): Collection
+    {
+        return $this->konijnen;
+    }
+
+    public function addKonijnen(Konijn $konijnen): self
+    {
+        if (!$this->konijnen->contains($konijnen)) {
+            $this->konijnen[] = $konijnen;
+            $konijnen->setRas($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKonijnen(Konijn $konijnen): self
+    {
+        if ($this->konijnen->contains($konijnen)) {
+            $this->konijnen->removeElement($konijnen);
+            // set the owning side to null (unless already changed)
+            if ($konijnen->getRas() === $this) {
+                $konijnen->setRas(null);
             }
         }
 

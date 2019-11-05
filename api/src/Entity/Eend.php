@@ -14,9 +14,9 @@ use Symfony\Component\Serializer\Annotation\MaxDepth;
  *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
  *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
  * )
- * @ORM\Entity(repositoryClass="App\Repository\HondRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\EendRepository")
  */
-class Hond
+class Eend
 {
     /**
      * @var \Ramsey\Uuid\UuidInterface
@@ -38,7 +38,6 @@ class Hond
      * @ORM\Column(type="uuid", unique=true)
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
-     * @Assert\Uuid
      */
     private $id;
 
@@ -56,7 +55,7 @@ class Hond
     private $naam;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="honden",cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ras", inversedBy="eenden", cascade="persist")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)
@@ -64,8 +63,7 @@ class Hond
     private $ras;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="honden")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Owner", inversedBy="eenden")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */
