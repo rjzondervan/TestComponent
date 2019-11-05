@@ -295,10 +295,6 @@ class Owner
     {
         return $this->birthdate;
     }
-
-    /**
-     * @param mixed $birthdate
-     */
     public function setBirthdate($birthdate): self
     {
         $this->birthdate = $birthdate;
