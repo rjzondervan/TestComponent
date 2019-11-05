@@ -32,42 +32,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Hond'
+                  $ref: '#/components/schemas/Hond-read'
       parameters:
         -
           name: page
@@ -116,28 +116,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
           links:
             GetHondItem:
               parameters:
@@ -152,28 +152,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
         description: 'The new Hond resource'
       parameters:
         -
@@ -253,28 +253,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
         404:
           description: 'Resource not found'
     delete:
@@ -370,28 +370,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
         400:
           description: 'Invalid input'
         404:
@@ -400,28 +400,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
         description: 'The updated Hond resource'
     patch:
       tags:
@@ -470,28 +470,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Hond'
+                $ref: '#/components/schemas/Hond-read'
         400:
           description: 'Invalid input'
         404:
@@ -500,28 +500,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Hond'
+              $ref: '#/components/schemas/Hond-write'
         description: 'The updated Hond resource'
   /ras:
     get:
@@ -537,42 +537,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ras'
+                  $ref: '#/components/schemas/Ras-read'
       parameters:
         -
           name: page
@@ -621,28 +621,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
           links:
             GetRasItem:
               parameters:
@@ -657,28 +657,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
         description: 'The new Ras resource'
       parameters:
         -
@@ -758,28 +758,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
         404:
           description: 'Resource not found'
     delete:
@@ -875,28 +875,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
         400:
           description: 'Invalid input'
         404:
@@ -905,28 +905,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
         description: 'The updated Ras resource'
     patch:
       tags:
@@ -975,28 +975,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Ras'
+                $ref: '#/components/schemas/Ras-read'
         400:
           description: 'Invalid input'
         404:
@@ -1005,57 +1005,75 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Ras'
+              $ref: '#/components/schemas/Ras-write'
         description: 'The updated Ras resource'
 components:
   schemas:
-    Hond:
+    Hond-read:
       type: object
       description: ''
       properties:
         id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
           readOnly: true
-          type: integer
         naam:
           type: string
         ras:
+          $ref: '#/components/schemas/Ras-read'
+    Hond-write:
+      type: object
+      description: ''
+      properties:
+        naam:
           type: string
-    Ras:
+        ras:
+          $ref: '#/components/schemas/Ras-write'
+    Ras-read:
       type: object
       description: ''
       properties:
         id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
           readOnly: true
-          type: integer
         naam:
           type: string
         beschrijving:
           type: string
-        honden:
-          type: array
-          items:
-            type: string
+    Ras-write:
+      type: object
+      description: ''
+      properties:
+        naam:
+          type: string
+        beschrijving:
+          type: string
 host: irc.zaakonline.nl
 servers:
   -
