@@ -23,15 +23,14 @@ jobs:
  #   - name: Build the Docker image
  #     run: docker-compose build --pull --build-arg APP_ENV=$APP_ENV
      - name: Setting APP_ENV
-       if: contains( 'development', $GITHUB_REF ) == success()
        env:
         APP_ENV: dev
        run: echo "set APP_ENV to $APP_ENV, GITHUB_REF = $GITHUB_REF"
-     - if: contains( 'master', github.ref ) == success()
+     - if: contains( github.ref, "master" )
        env:
          APP_ENV: prod
        run: echo "set APP_ENV to $APP_ENV" 
-     - if: contains( 'staging', github.ref ) == success()
+     - if: contains( github.ref, "staging" )
        env:
          APP_ENV: stag
        run: echo "set APP_ENV to $APP_ENV"  
