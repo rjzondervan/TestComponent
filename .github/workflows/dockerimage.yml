@@ -30,10 +30,10 @@ jobs:
        env:
          GITHUB_BASE_REF: ${{ github.base_ref }}
        run: echo "GitHub base reference = $GITHUB_BASE_REF"
-#      - name: Setting APP_ENV
-#        env:
-#         APP_ENV: dev
-#        run: echo "set APP_ENV to $APP_ENV"     
+     - name: Setting APP_ENV
+       env:
+        APP_ENV: dev
+       run: echo "set APP_ENV to $APP_ENV"     
 #      - if: contains( 'master', GITHUB_REF )
 #        env:
 #          APP_ENV: prod
