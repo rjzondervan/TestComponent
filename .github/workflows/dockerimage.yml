@@ -22,11 +22,18 @@ jobs:
  #   - uses: actions/checkout@v1
  #   - name: Build the Docker image
  #     run: docker-compose build --pull --build-arg APP_ENV=$APP_ENV
-     - name: Dump branch reference
+     - name: Setting APP_ENV
        env:
-         BRANCH_NAME: ${{ github.ref }}
-       run: echo $BRANCH_NAME
-     - name: Dump branch base_ref
+        APP_ENV: dev
+       run: echo "set APP_ENV to $APP_ENV":
+      
+     - if: contains( master, ${{ github.ref }} )
        env:
-         BRANCH_NAME: ${{ github.base_ref }}
-       run: echo $BRANCH_NAME
+         APP_ENV: prod
+       run: echo "set APP_ENV to $APP_ENV" 
+     - if: contains( staging, ${{ github.ref }} )
+       env:
+         APP_ENV: stag
+         run: echo "set APP_ENV to $APP_ENV"  
+
+
