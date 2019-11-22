@@ -40,8 +40,8 @@ jobs:
          APP_ENV: prod
        run: echo "set APP_ENV to $APP_ENV" 
      - if: contains( 'staging', github.ref )
-#        env:
-#          APP_ENV: stag
-#        run: echo "set APP_ENV to $APP_ENV"  
+       env:
+         APP_ENV: stag
+       run: echo "set APP_ENV to $APP_ENV"  
 
 
