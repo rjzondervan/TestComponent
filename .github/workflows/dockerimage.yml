@@ -26,11 +26,11 @@ jobs:
        env:
         APP_ENV: dev
        run: echo "set APP_ENV to $APP_ENV, GITHUB_REF = $GITHUB_REF"
-     - if: contains( github.ref, "master" )
+     - if: contains( github.ref, 'master' )
        env:
          APP_ENV: prod
        run: echo "set APP_ENV to $APP_ENV" 
-     - if: contains( github.ref, "staging" )
+     - if: contains( github.ref, 'staging' )
        env:
          APP_ENV: stag
        run: echo "set APP_ENV to $APP_ENV"  
