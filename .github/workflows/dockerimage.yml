@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  pull_request:
+    branches: 
+      - master
+      - staging
+      - development
+  push:
+    branches: 
+      - master
+      - staging
+      - development
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+ #   - uses: actions/checkout@v1
+ #   - name: Build the Docker image
+ #     run: docker-compose build --pull --build-arg APP_ENV=$APP_ENV
+     - name: Dump branch reference
+       env:
+         BRANCH_NAME: ${{ github.ref }}
+       run: echo $BRANCH_NAME
+     - name: Dump branch base_ref
+       env:
+         BRANCH_NAME: ${{ github.base_ref }}
+       run: echo $BRANCH_NAME
