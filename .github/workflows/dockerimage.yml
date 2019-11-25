@@ -20,6 +20,8 @@ jobs:
 
     steps:
      - uses: actions/checkout@v1
+     - name: Pulling old images, if any
+       run: docker-compose pull --ignore-pull-failures
      - name: Setting APP_ENV
        env:
         APP_ENV: dev
@@ -42,4 +44,5 @@ jobs:
        run: docker ps
      - name: Security Checks
        run: docker-compose exec -T php composer req sensiolabs/security-checker
-#     - name: 
+     - name: Chores
+       run: docker-compose dow
