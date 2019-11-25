@@ -38,6 +38,8 @@ jobs:
        run: docker-compose up -d
      - name: Taking some sleep
        run: sleep 30
+     - name: Going to build folder
+       run: cd $GITHUB_WORKSPACE
      - name: Security Checks
        run: docker-compose exec -T php composer req sensiolabs/security-checker
 #     - name: 
