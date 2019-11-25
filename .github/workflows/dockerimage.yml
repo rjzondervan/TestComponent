@@ -19,42 +19,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - uses: actions/checkout@v1
-     - name: Pulling old images, if any
-       run: docker-compose pull --ignore-pull-failures
-     - name: Setting APP_ENV
-       env:
-        APP_ENV: dev
-       run: echo "set APP_ENV to $APP_ENV"
-     - if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
-       env:
-          APP_ENV: prod
-       run: echo "set APP_ENV to $APP_ENV" 
-     - if: contains( github.ref, 'staging' ) || contains( github.base_ref, 'staging' )
-       env:
-         APP_ENV: stag
-       run: echo "set APP_ENV to $APP_ENV"  
-     - name: Build the Docker image
-       run: docker-compose build --pull --build-arg APP_ENV=$APP_ENV
-  tests:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-     - name: Run the docker image
-       run: docker-compose up -d
-     - name: Taking some sleep
-       run: sleep 100
-     - name: Check if all containers are running
-       run: docker ps
-       #docker-compose logs
-     - name: Security Checks
-       run: docker-compose exec -T php composer req sensiolabs/security-checker
-     - name: Chores
-       run: docker-compose down
-  push:
-    runs-on: ubuntu-latest
-    needs: tests
-    steps:
+      - uses: actions/checkout@v1
+      - name: Pulling old images, if any
+        run: docker-compose pull --ignore-pull-failures
+      - name: Setting APP_ENV
+        env:
+         APP_ENV: dev
+        run: echo "set APP_ENV to $APP_ENV"
+      - if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
+        env:
+         APP_ENV: prod
+        run: echo "set APP_ENV to $APP_ENV" 
+      - if: contains( github.ref, 'staging' ) || contains( github.base_ref, 'staging' )
+        env:
+          APP_ENV: stag
+        run: echo "set APP_ENV to $APP_ENV"  
+      - name: Build the Docker image
+        run: docker-compose build --pull --build-arg APP_ENV=$APP_ENV
+      - name: Run the docker image
+        run: docker-compose up -d
+      - name: Taking some sleep
+        run: sleep 100
+      - name: Check if all containers are running
+        run: docker ps
+        #docker-compose logs
+      - name: Security Checks
+        run: docker-compose exec -T php composer req sensiolabs/security-checker
+      - name: Chores
+        run: docker-compose down
       - uses: actions/checkout@v1
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
