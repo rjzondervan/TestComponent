@@ -60,6 +60,6 @@ jobs:
           fi
       - env:
           OUTPUTS: toJSON(steps.dockerhub-login.outputs)
-        run: echo OUTPUTS
+        run: echo $OUTPUTS
       - name: Push to docker hub
         run: docker-compose push
