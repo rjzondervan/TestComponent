@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Pulling old images, if any
-        run: docker-compose pull --ignore-pull-failures
+#       - name: Pulling old images, if any
+#         run: docker-compose pull --ignore-pull-failures
 #       - name: Setting APP_ENV to dev
 #         run: | 
 #           echo ::set-env name=APP_ENV::dev
@@ -72,6 +72,7 @@ jobs:
             echo "##[set-output name=success]true"
           else
             echo "##[set-output name=success]false"
+          fi
       - name: Deploy through helm
         if: (contains( github.ref, 'master' ) || contains( github.ref, 'staging' ) || contains( github.ref, 'development' )) && steps.kubeconfig.outputs.success == 'true'
         run: helm install --name pc-$APP_ENV ./api/helm  --kubeconfig="kubeconfig.yaml" --namespace=$APP_ENV  --set settings.env=$APP_ENV,settings.debug=1,settings.loadbalancerEnabled=true
