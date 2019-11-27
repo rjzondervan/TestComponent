@@ -52,11 +52,11 @@ jobs:
         run: |
           if [ "${{ secrets.DOCKERHUB_PASSWORD }}" != "" ] && [ "${{ secrets.DOCKERHUB_USERNAME }}" != "" ]; then
             echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-            echo "##[set-output name=success;]'true'"
+            echo "##[set-output name=success;]true"
           else
-            echo "##[set-output name=success;]'false'"
+            echo "##[set-output name=success;]false"
           fi
-      - if: steps.dockerhub-login.outputs.success == "'true'"
+      - if: steps.dockerhub-login.outputs.success == "true"
         run: echo 'yay'
 #       - name: Push to docker hub
 #         run: docker-compose push
