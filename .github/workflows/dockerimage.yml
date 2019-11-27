@@ -50,7 +50,7 @@ jobs:
       - name: Login to DockerHub Registry
         id: dockerhub-login
         run: |
-          if ["${{ secrets.DOCKERHUB_PASSWORD }}" != "" && "${{ secrets.DOCKERHUB_USERNAME }}" != ""]; then
+          if [ "${{ secrets.DOCKERHUB_PASSWORD }}" != "" && "${{ secrets.DOCKERHUB_USERNAME }}" != "" ]; then
             echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
           else
             echo "skipping this step"
