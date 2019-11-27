@@ -57,8 +57,5 @@ jobs:
             echo "##[set-output name=success;]false"
           fi
       - if: steps.dockerhub-login.outputs.success == 'true'
-        run: echo 'yay'
-      - if: steps.dockerhub-login.outputs.success == 'false'
-        run: echo 'nay'
-#       - name: Push to docker hub
-#         run: docker-compose push
+        name: Push to docker hub
+        run: docker-compose push
