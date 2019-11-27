@@ -66,7 +66,8 @@ jobs:
       - name: Create kube config
         id: kubeconfig
         if: contains( github.ref, 'master' ) || contains( github.ref, 'staging' ) || contains( github.ref, 'development' )
-        run: if[ "${{ secrets.KUBECONFIG }}" != "" ]; then
+        run: |
+          if[ "${{ secrets.KUBECONFIG }}" != "" ]; then
             printf "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
             echo "##[set-output name=success]true"
           else
