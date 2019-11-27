@@ -59,7 +59,7 @@ jobs:
             echo "skipping this step"
           fi
       - env:
-          OUTPUTS: toJSON(steps.dockerhub-login.outputs)
+          OUTPUTS: ${{ toJSON(steps.dockerhub-login.outputs) }}
         run: echo $OUTPUTS
 #       - name: Push to docker hub
 #         run: docker-compose push
