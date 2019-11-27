@@ -48,8 +48,14 @@ jobs:
       - name: Chores
         run: docker-compose down
       - name: Login to DockerHub Registry
-        if: $secrets.DOCKERHUB_PASSWORD != null || $secrets.DOCKERHUB_USERNAME != null
+        id: dockerhub-login
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        if: DOCKERHUB_USERNAME != null && DOCKERHUB_PASSWORD != null
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - env:
+          OUTPUTS: toJSON(steps.dockerhub-login.outputs)
+        run: echo OUTPUTS
       - name: Push to docker hub
-        if: $secrets.DOCKERHUB_PASSWORD != null || $secrets.DOCKERHUB_USERNAME != null
         run: docker-compose push
