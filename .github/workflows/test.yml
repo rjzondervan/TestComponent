@@ -11,10 +11,10 @@ jobs:
 
         runs-on: ubuntu-latest
         steps:
-            - name: Dump folder name and contents
-              run: |
-                  pwd
-                  ls -l
+            - name: Dump folder name
+              run: pwd
+            - name: Dump folder contents
+              run: ls -l
             - name: Export release code
               if: (success() || failure())
               id: releasecode
