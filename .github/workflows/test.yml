@@ -11,6 +11,7 @@ jobs:
 
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v1
             - name: Dump folder name
               run: pwd
             - name: Dump folder contents
