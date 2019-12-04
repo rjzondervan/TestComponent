@@ -20,4 +20,5 @@ jobs:
               if: (success() || failure())
               id: releasecode
               run: |
-                echo '$APP_BUILD-$(git rev-parse --short "$GITHUB_SHA")'
+                export BLA=$APP_BUILD-$(git rev-parse --short "$GITHUB_SHA")
+                echo $BLA
