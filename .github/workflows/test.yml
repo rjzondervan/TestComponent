@@ -1,0 +1,22 @@
+name: Test
+
+on:
+    push:
+        branches:
+            - dev-robert
+
+jobs:
+
+    build:
+
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dump folder name and contents
+              run: |
+                  pwd
+                  ls -l
+            - name: Export release code
+              if: (success() || failure())
+              id: releasecode
+              run: |
+                echo "##[set-output name=releasename]$APP_BUILD-$GITHUB_SHA"
