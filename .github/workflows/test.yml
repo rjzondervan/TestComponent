@@ -24,8 +24,8 @@ jobs:
                     echo "false"
                   fi
             - name: Install Newman
-              if: steps.postmancheck.outputs.postmanAvailable == true
+              if: steps.postmancheck.outputs.postmanAvailable == 'true'
               run: npm install -g newman
             - name: Run Newman
-              if: steps.postmancheck.outputs.postmanAvailable == true
+              if: steps.postmancheck.outputs.postmanAvailable == 'true'
               run: newman run *.postman_collection.json
