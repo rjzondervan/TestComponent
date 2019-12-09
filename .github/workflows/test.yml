@@ -15,7 +15,7 @@ jobs:
             - name: Test if postman files are defined
               id: postmancheck
               run: |
-                  if test -f postman.json; then 
+                  if test -f *.postman_collection.json; then 
                     echo "##[set-output name=postmanAvailable]true"
                   else
                     echo "##[set-output name=postmanAvailable]false" 
@@ -25,4 +25,4 @@ jobs:
               run: npm install -g newman
             - name: Run Newman
               if: steps.postmancheck.outputs.postmanAvailable == true
-              run: newman run postman_collection.json
+              run: newman run *.postman_collection.json
