@@ -12,13 +12,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
-            - name: Dump folder name
-              run: pwd
-            - name: Dump folder contents
-              run: ls -l
-            - name: Export release code
-              if: (success() || failure())
-              id: releasecode
+            - name: Test if postman files are defined
+              id: postmancheck
               run: |
-                export BLA=$APP_BUILD-$(git rev-parse --short "$GITHUB_SHA")
-                echo $BLA
+                  if test -f postman.json; then 
+                    echo "##[set-output name=postmanAvailable]true"
+                  else
+                    echo "##[set-output name=postmanAvailable]false" 
+            - name: Install Newman
+              if: steps.postmancheck.outputs.postmanAvailable == true
+              run: npm install -g newman
+            - name: Run Newman
+              if: steps.postmancheck.outputs.postmanAvailable == true
+              run: newman run postman_collection.json
