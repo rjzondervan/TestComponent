@@ -19,6 +19,7 @@ jobs:
                     echo "##[set-output name=postmanAvailable]true"
                   else
                     echo "##[set-output name=postmanAvailable]false" 
+                  fi
             - name: Install Newman
               if: steps.postmancheck.outputs.postmanAvailable == true
               run: npm install -g newman
