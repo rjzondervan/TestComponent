@@ -104,5 +104,21 @@ jobs:
         - run: docker-compose up -d
         - run: sleep 180
         - run: docker-compose logs
+        -   name: Test if postman files are defined
+            id: postmancheck
+            run: |
+               if test -f *.postman_collection.json; then 
+                 echo "##[set-output name=postmanAvailable]true"
+                 echo "true"
+                 else
+                   echo "##[set-output name=postmanAvailable]false"
+                   echo "false"
+                 fi
+        -   name: Install Newman
+            if: steps.postmancheck.outputs.postmanAvailable == 'true'
+            run: npm install -g newman
+        -   name: Run Newman
+            if: steps.postmancheck.outputs.postmanAvailable == 'true'
+            run: newman run *.postman_collection.json
         - run: docker-compose down
       
