@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32a34d91-f01f-47de-8134-676b821f646e" name="Default" comment="Do postman tests">
+    <list default="true" id="32a34d91-f01f-47de-8134-676b821f646e" name="Default" comment="syntax correct">
       <change beforePath="$PROJECT_DIR$/.github/workflows/dockerimage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/dockerimage.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -154,6 +154,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rjzon\Documents\Conduction\TestComponent\api\public\schema" />
       <recent name="C:\Users\rjzon\Documents\Conduction\TestComponent\.github\workflows" />
     </key>
   </component>
@@ -182,7 +183,7 @@
       <workItem from="1574770780191" duration="4500000" />
       <workItem from="1575443613282" duration="255000" />
       <workItem from="1575892649512" duration="3366000" />
-      <workItem from="1581417655234" duration="2961000" />
+      <workItem from="1581417655234" duration="6425000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed language errors in Installation.md">
       <created>1573726496674</created>
@@ -478,7 +479,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581420404120</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="syntax correct">
+      <created>1581421389439</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1581421389439</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Always run cleanup, postman in definitive folder">
+      <created>1581425848142</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1581425848142</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,8 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Free 'Create Release' from install/upgrade lock." />
-    <MESSAGE value="Fix issue with rollout" />
     <MESSAGE value="Allow create release to fail" />
     <MESSAGE value="Test with release name" />
     <MESSAGE value="(semi) definitive fix for rollout issue" />
@@ -523,6 +536,8 @@
     <MESSAGE value="Require build to finish" />
     <MESSAGE value="use pull and checkout" />
     <MESSAGE value="Do postman tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Do postman tests" />
+    <MESSAGE value="syntax correct" />
+    <MESSAGE value="Always run cleanup, postman in definitive folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Always run cleanup, postman in definitive folder" />
   </component>
 </project>
