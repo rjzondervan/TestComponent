@@ -19,8 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Pulling old images, if any
-        run: docker-compose pull --ignore-pull-failures
       - name: Setting APP_NAME
         run: | 
             export NAME=$(grep APP_NAME= .env | cut -d '=' -f2)
@@ -101,6 +99,8 @@ jobs:
       needs: build
       steps: 
         - uses: actions/setup-node@v1
+        - uses: actions/checkout@v1
+        - run: docker-compose pull
         - run: docker-compose up -d
         - run: sleep 180
         - run: docker-compose logs
